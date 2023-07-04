@@ -305,7 +305,7 @@ fn static_lib_url() -> String {
 
   // Note: we always use the release build on windows.
   if cfg!(target_os = "windows") {
-    return format!("{}/v{}/rusty_v8_release_{}.lib", base, version, target);
+    return format!("{}/v{}/rusty_v8_release_{}.lib", base, version, "x86_64-pc-windows-msvc");
   }
   // Use v8 in release mode unless $V8_FORCE_DEBUG=true
   let profile = match env_bool("V8_FORCE_DEBUG") {
