@@ -439,7 +439,7 @@ fn download_static_lib_binaries() {
 }
 
 fn print_link_flags() {
-  println!("cargo:rustc-link-lib=static=rusty_v8");
+  println!("cargo:rustc-link-lib=dylib=rusty_v8");
 
   let should_dyn_link_libcxx = cfg!(not(feature = "use_custom_libcxx"))
     || env::var("GN_ARGS").map_or(false, |gn_args| {
