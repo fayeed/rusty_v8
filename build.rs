@@ -205,7 +205,11 @@ fn build_v8() {
     gn_args.push(r#"target_cpu="x86""#.to_string());
   }
 
+  
+  
   let gn_root = env::var("CARGO_MANIFEST_DIR").unwrap();
+  
+  println!("test: {} {}", gn_root, gn_args.join(" | "));
 
   let gn_out = maybe_gen(&gn_root, gn_args);
   assert!(gn_out.exists());
